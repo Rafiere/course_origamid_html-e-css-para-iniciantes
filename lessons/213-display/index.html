@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Display</title>
+  </head>
+  <body>
+    <!-- O display "inline" é o padrão para textos comuns e para a tag "span", ele faz com que o "width" do elemento seja apenas o seu conteúdo, assim, os dois textos abaixo ficarão um ao lado do outro. No "display: inline", não podemos definir valores de "width", "height" e "margin" (top e bottom), ou seja, ele possui um estilo padrão. -->
+
+    Texto Puro
+    <span>Texto Genérico</span>
+
+    <!-- O H1 possui um "display: block". Basicamente, ele ocupa 100% da largura e não deixa nenhum elemento ficar ao lado dele. 
+    
+    Nem se alterássemos o valor desse "H1" para um width personalizado, ele permitiria que algum elemento ficasse ao lado dele, pois o "display: block" realiza o bloqueio da linha inteira. -->
+    <h1>Novo H1</h1>
+
+    <!-- O "display: inline-block" é um display: inline que aceita as propriedades do "Box Model", ou seja, ele aceita valores de "padding", "margin", "width" e "height", por exemplo. -->
+
+    <div>Acesse o meu curso <a>neste link.</a></div>
+  </body>
+</html>
