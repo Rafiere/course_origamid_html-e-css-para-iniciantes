@@ -1,0 +1,19 @@
+/* Existem algumas propriedades CSS que são passadas de pai para filho como uma herança, como o "color", o "font-size", o "font-family" e outras.
+
+O valor padrão escreverá por cima da herança, por causa disso, ao definirmos uma "color" no "body", os elementos "<a>" não mudam de cor. Basicamente, se os elementos possuírem um valor padrão, eles não herdarão esse valor do elemento-pai. Como o "<a>" possui uma "color" padrão, ele não herdará a color que estiver no elemento-pai. */
+
+body {
+  color: seagreen;
+}
+
+/* Se quisermos alterar o valor padrão do elemento "<a>", teremos que acessar esse elemento propriamente dito e realizarmos a alteração, pois, por herança, esse valor não será alterado. */
+
+a {
+  color: seagreen;
+}
+
+/* Ao invés de alterarmos a cor do elemento "<a>", podemos utilizar o atributo "color: inherit", assim, o valor da propriedade "color" do elemento "<a>" será "seagreen", pois ele herdará essa cor do elemento-pai. */
+
+a {
+  color: inherit;
+}
