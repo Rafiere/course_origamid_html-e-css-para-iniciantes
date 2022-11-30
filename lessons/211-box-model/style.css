@@ -1,0 +1,50 @@
+/* O Box Model é um modelo que define a forma que as caixas de uma página web serão configuradas. Ela é composta dos seguintes elementos: 
+
+1. Conteúdo: É o conteúdo da caixa.
+2. Padding: É a distância entre o conteúdo e a borda. 
+3. Border: É o contorno do elemento.
+
+4. Width: É a soma total da largura do elemento. É composto pela medida: "border-left + padding-left + content + padding-right + border-right". 
+
+5. Height: É a soma total da altura do elemento. É composto pelas medidas: "border-top + padding-top + content + padding-bottom + border-bottom". 
+
+6. Margin: É o que separa um elemento de outro elemento. Ela, por padrão, não entra na conta do "width" e nem do "height", ou seja, ela não faz parte dessas duas medidas. */
+
+/* Quando definimos o "width" como "auto", isso significa que terá o tamanho de 100% do elemento-pai. */
+
+div {
+  background: #cccccc;
+
+  /* Quando definimos o valor "width" como "auto", estamos definindo para essa div pegar o width total do elemento-pai. */
+
+  /* width: auto; */
+
+  /* Se definirmos um width fixo de "140px" e um padding de "30px", pelo padrão do Box Model, o tamanho total desse width será de "200px", pois será somado os 140px padrão com os 30px da esquerda e os 30px da direita, formando a nova width de 200px. */
+
+  width: 140px;
+  height: 80px;
+  padding: 30px;
+
+  /* Agora, com a borda, o elemento terá o width de 160px, pois, por padrão, o Box Model leva em consideração o conteúdo, o padding e a borda para definir o width e o height. */
+
+  border: 10px solid #111111;
+
+  /* O "margin", por padrão, não entra no width e no height do Box Model. */
+  margin: 30px;
+}
+
+/* Um elemento de bloco, ou seja, que possui o "display: block", por padrão, sempre começa com o valor "width: auto". */
+
+/* Em um elemento de bloco, o "height" estará definido como "auto", assim, a altura variará de acordo com o tamanho do conteúdo, ou seja, se tivermos a propriedade "height: auto", o "height" do elemento será de acordo com o tamanho do conteúdo dele, assim, se colocarmos um texto muito grande, o "height" do elemento aumentará para conseguir comportar esse texto. */
+
+h1 {
+  background: #84e;
+  padding: 20px;
+  border: 4px solid #111;
+
+  /* O elemento "div" acima possui o atributo "margin" com o valor de "30px", e esse elemento, que está abaixo, possui o atributo "margin" com o valor de "40px".
+    
+    Por padrão, o CSS não soma as margens, assim, sempre a maior margem entre esses elementos será definida, dessa forma, a margin será de "40px".*/
+
+  margin: 40px;
+}
