@@ -1,0 +1,78 @@
+body {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  background: darkblue;
+  display: inline-block;
+}
+
+p {
+  background: lightblue;
+}
+
+/* O "rem" é uma unidade relativa ao tamanho da fonte do elemento raiz HTML. Na maioria dos browsers, com a configuração padrão, 1rem equivale a 16px. */
+
+/* Existem duas formas para aumentar o tamanho do browser, que é pelo zoom da página ou através da definição de um tamanho de texto maior para o browser. No primeiro exemplo, utilizar "px" ou "rem" não possui nenhuma diferença, porém, no segundo caso, se definirmos como "muito grande" o tamanho da fonte, "1rem" vai passar a valer "24px" para o browser. As medidas que estão em "rem" vão respeitar esse valor, as medidas que estão em "px", não. */
+
+.px {
+  font-size: 24px;
+  padding: 16px 32px;
+}
+
+.rem {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+/* Como o tamanho do "rem" é definido pelo tamanho da fonte raiz do HTML, além de mudarmos o tamanho da fonte diretamente no browser, se alterarmos o "font-size" do elemento "html" através do CSS, o tamanho padrão do "rem" também será modificado, ou seja, "1rem" valerá uma quantidade maior ou menos de pixels, por exemplo: */
+
+/* html {
+  font-size: 32px;
+} */
+
+/* No exemplo acima, 1rem passou a valer "32px" nessa página, ao invés de "16px". */
+
+/* A unidade "em" não é muito utilizada atualmente, mas ela veio antes do rem. */
+
+.em {
+  /* O "em" leva em consideração o "font-size" do elemento-pai, enquanto que o "rem" leva em consideração apenas o "font-size" do elemento raiz, que é o elemento HTML. */
+
+  font-size: 2em;
+}
+
+/* O "vh" significa o tamanho da altura da tela visível (viewport height", e o "vw" significa o tamanho da largura da tela visível (viewport width). 100vw = 100% da tela. */
+
+/* Antes do "vh" só existia a porcentagem. Ela é problemática para definir o "height", pois o "height: 100%" significa 100% da altura do pai. A altura do pai sempre é definida pelo tamanho do conteúdo, então, basicamente, o "100%" de "height" não muda em nada. */
+
+/* 100vh será 100% da altura da tela, independente da quantidade de conteúdo. */
+
+.viewport {
+  height: 40px;
+  background: lightblue;
+
+  /* Isso equivale a largura da tela visível. Se tivermos uma "margin", isso causará uma barra de rolagem lateral sendo exibida, pois ele somará o tamanho da largura da tela visível ao tamanho da margem. Caso não queiramos que essa soma seja efetuada, temos que alterar o "box-sizing". */
+
+  width: 100vw;
+
+  /* Estamos inserindo 100% do tamanho da tela. */
+
+  /* Utilizar "%" é diferente de utilizarmos o "vh" ou o "vw". O "%" se refere ao tamanho do elemento-pai, ou seja, 50% representa 50% do tamanho do elemento-pai, enquanto que "50vh" sempre representará 50% do tamanho da tela atual. */
+
+  height: 100vh;
+}
+
+/* A função "calc()" retorna um valor com base no cálculo efetuado entre os parênteses. Podemos combinar unidades, por exemplo: */
+
+.calc {
+  background: lightblue;
+
+  /* Esse "calc" representa 1/3 da altura da tela. */
+
+  /* A função "calc()" não deixará o site lento. */
+
+  width: calc(100vh / 3);
+  height: 100vh;
+}
