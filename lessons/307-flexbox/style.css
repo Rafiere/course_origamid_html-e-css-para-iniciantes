@@ -1,0 +1,61 @@
+/* Durante anos, a única forma de posicionar itens na tela era através de uma técnica chamada "float", que acabava criando bugs no layout inteiro. Após muito tempo, foi implementada a especificação que trouxe o Flexbox. Dessa forma, conseguimos definir que os filhos de uma caixa podem ficar um ao lado do outro. */
+
+.flex {
+  /* Ao colocarmos o "display: flex", os elementos ficarão dispostos um ao lado do outro. */
+
+  display: flex;
+
+  /* A propriedade "gap" criará um espaçamento entre os elementos do "display: flex". */
+
+  gap: 20px;
+
+  /* Essa propriedade indica se os elementos do Flex serão quebrados ou não. */
+  flex-wrap: wrap;
+
+  /* Serve para posicionar os elementos de um flexbox no eixo principal. O espaçamento apenas funcionará se tivermos espaço sobrando. */
+  justify-content: center;
+
+  /* Serve para posicionar os elementos de um flexbox no eixo secundário. O espaçamento apenas funcionará se tivermos espaço sobrando. */
+  align-items: center;
+}
+
+h2 {
+  /* A propriedade "flex" deve ser utilizada nos itens do Flexbox, ou seja, não no container que está envelopando os itens, e sim nos próprios itens. Ela é uma junção de três propriedades, que são as propriedades "flex-grow: 1", "flex-basis: 200px" e "flex-shrink: 0". A propriedade "flex:1" é um atalho para: "flex-grow: 1", "flex-shrink: 1" e "flex-basis: 0". */
+
+  /* O "flex-grow: 0" é o valor padrão, com ele, os elementos do flexbox não crescerão de acordo com o tamanho do elemento-pai. O "flex-grow: 1" indica que os elementos deverão crescer, diminuindo o espaço em branco dentro desse elemento. */
+
+  flex-grow: 1;
+
+  /* Por padrão, o "flex-basis" possui o valor "auto". Isso significa que o crescimento do "flex-grow" vai ocorrer no espaço que sobra, ou seja, no espaço vazio após o conteúdo do elemento, assim, o elemento vai crescer o conteúdo inteiro dele, e, após isso, o espaço em branco que sobrar será distribuído entre os elementos do container-flex. Basicamente, os elementos do container-flex não terão o mesmo tamanho total. */
+
+  /* Se definirmos o valor do "flex-basis" como "1", o espaçamento será distribuído pelos elementos inteiros, ou seja, todos os elementos terão o mesmo tamanho, mas o espaçamento do conteúdo dentro desses elementos não será do mesmo tamanho. */
+
+  flex-basis: auto;
+
+  /* O "flex-shrink" define se o conteúdo do elemento pode ser quebrado ou não. Se definirmos o valor dessa propriedade como "1", isso definirá que o elemento poderá ser quebrado caso a tela fique muito pequena, como em um texto, que quebrará para a próxima linha. Se definirmos o valor dessa propriedade como "0", isso definirá que o conteúdo do elemento não será quebrado, assim, ele terá o seu tamanho preservado, porém, isso não tornará o elemento responsivo. */
+
+  flex-shrink: 1;
+
+  /* A propriedade "flex: 1" é uma junção das três propriedades acima. Basicamente, ela possui as seguintes propriedades: 
+  
+  flex-grow: 1 - Define que o elemento crescerá.
+  flex-shrink: 1 - Define que, caso necessário, o conteúdo do elemento poderá ser quebrado.
+  flex-basis: 0 - Define que o espaço distribuído pelo "flex-grow" deverá ser igual entre os elementos, assim, eles, basicamente, sempre terão o mesmo tamanho. */
+
+  /* flex: 1; */
+
+  /* Se os elementos estão com o "flex: 1", o "justify-content: center" nunca funcionará, pois o espaço em branco estará distribuído. Caso queiramos justificar o conteúdo, não devemos definir nenhum valor para a propriedade "flex". */
+}
+
+.grid {
+  /* Diferença entre Flexbox e Grid */
+
+  /* Eles resolvem problemas diferentes. O grid fornece controle em todos os eixos, e o flexbox fornece controle apenas no total de itens por linha. */
+
+  /* Basicamente, o "flex", ao quebrar o elemento, não se preocupa em manter as colunas, o grid, sim. */
+
+  margin-top: 60px;
+
+  /* O repeat(auto-fit, 200px)" definirá que, se tiver um espaço de 200px disponível, o Grid deverá criar uma nova coluna para comportar os elementos. */
+  grid-template-columns: repeat(auto-fit, 1fr);
+}
