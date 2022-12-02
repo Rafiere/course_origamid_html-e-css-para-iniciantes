@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pontos de Referência</title>
+  </head>
+  <body>
+    <!-- O "nav" indica os elementos de navegação do site. -->
+
+    <nav aria-label="primária">
+      <!-- O "aria-label" serve para darmos um título para o elemento. -->
+      <a href="/">Sobre</a>
+      <a href="/">Contato</a>
+    </nav>
+
+    <!-- A tag "main" serve para marcar o conteúdo principal da página. Normalmente, utilizamos uma tag "main" por página. -->
+
+    <main>
+      <h1>Bicicletas Bikcraft</h1>
+      <p>Teste</p>
+    </main>
+
+    <!-- O "article" cria um ponto de referência nos leitores de tela e deve ser utilizado para conteúdos que não dependam do contexto para serem compreendido. -->
+
+    <article aria-labelledby="sobrebik">
+      <h2 id="sobrebik">Sobre a Bikcraft</h2>
+      <p>A empresa foi fundada em 2014.</p>
+    </article>
+
+    <!-- O "section" não cria um ponto de referência no VoiceOver, além do uso ser recomendado apenas para conteúdos que dependam do contexto para serem compreendidos.-->
+
+    <section>
+      <h2 id="sobrebik">Sobre a Surf Total</h2>
+      <p>A empresa foi fundada em 2018.</p>
+    </section>
+
+    <!-- É uma tag usada para marcar conteúdo complementar ao principal do site, como uma lista de posts mais visitados, informações extras e etc. -->
+    <aside></aside>
+
+    <!-- O "header" é uma tag semântica que deve marcar o cabeçalho do site, juntamente com o banner. -->
+
+    <header></header>
+
+    <!-- O "footer" serve para marcar o rodapé do site. -->
+    <footer></footer>
+  </body>
+</html>
