@@ -1,0 +1,17 @@
+img {
+  /* The "max-width: 100%" property ensures that the image does not overflow the maximum size of the parent element, that is, that the image does not overflow on the screen. */
+
+  /* This property also establishes that the image will never grow larger than the original size, preventing the image from blurring if it grows too large. */
+
+  max-width: 100%;
+
+  /* If we put a "width: 100%", the image will grow more than its limit, that is, if it has 300px and is in a 600px container, it will grow up to 600px, even if that means that it will be blurred. */
+
+  /* We usually won't use this property, because we don't want the image be blurred. We usually uses the "max-width" property. */
+
+  /* width: 100% */
+
+  /* By default, an "img" element has the display "inline-block", so it has a default margin of 4px. To remove this margin, we normally use "display: block" for images. */
+
+  display: block;
+}
