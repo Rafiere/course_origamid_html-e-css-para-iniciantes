@@ -1,0 +1,54 @@
+body {
+  font-family: Arial;
+}
+
+/* Com a propriedade "display: grid", conseguimos definir linhas e colunas para organizarmos os elementos que estiverem dentro do grid. */
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0px;
+}
+
+.comprar {
+  background: #a8f;
+  color: #103;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.item {
+  background: #f7f7f7;
+  border: 1px solid #e7e7e7;
+  padding: 20px;
+  border-radius: 4px;
+
+  /* Ao definirmos o "display: grid", algumas coisas ocorrem nos elementos que estão dentro desse grid, são elas: 
+  
+  1. A margem entre os elementos para de colidir, ou seja, se tivermos um elemento com um "margin: 20px" e outro elemento com o "margin: 40px", ao invés da margem com "40px" ser levada em consideração, pois é a maior margem, as duas margens serão utilizadas e elas não colidirão entre os elementos. 
+  
+  2. Não teremos mais os elementos "de bloco" e os elementos "inline", todos os elementos que estão dentro do grid passarão a se comportar como um elemento grid, dessa forma, os elementos não ocuparão mais apenas a largura do conteúdo, como ocorriam com os elementos "inline", e sim, tentarão sempre ocupar 100% da largura do elemento. */
+  display: grid;
+}
+
+/* Por padrão, o "display: grid" possui apenas uma coluna, por isso, se não informarmos a quantidade de colunas do grid, ele terá apenas uma coluna. */
+
+.grid {
+  display: grid;
+
+  /* Essa propriedade permite que definamos a quantidade de colunas que o nosso grid terá. */
+
+  /* O "fr" é uma unidade fracionária utilizada no grid. Ele distribui o espaço que sobra entre os elementos do grid. Se colocarmos "grid-template-columns: 1fr 1fr", ele criará duas colunas no grid com tamanhos iguais. */
+
+  /* Se colocarmos "1fr 2fr", por exemplo, criaremos duas colunas no grid, em que a segunda coluna sempre terá o dobro do tamanho da primeira coluna. */
+
+  grid-template-columns: 1fr 1fr;
+
+  /* O "gap" é uma propriedade do "display: grid". No exemplo abaixo, ele, automaticamente, criará uma margem para baixo e para os lados, entre as colunas e as linhas do grid, de 20px. */
+
+  /* O "gap" sempre deve ser calculado em unidades fixas, como "px", "em", "rem" e outros. */
+  gap: 20px;
+}
