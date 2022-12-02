@@ -1,0 +1,85 @@
+/* Estilos Gerais */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 40px;
+}
+
+h1,
+p {
+  margin: 0px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1;
+}
+
+p {
+  font-size: 20px;
+}
+
+.comprar {
+  background: #a8f;
+  color: #103;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+/* Estilos do Grid */
+
+.grid {
+  /* Ao definirmos o "display: grid", todos os elementos do Grid passam a se tornar "grid items". Basicamente, o width deles tentam se expandir por 100% do container. */
+
+  display: grid;
+
+  gap: 20px;
+
+  grid-template-columns: 1fr 1fr;
+
+  /* O "align-items" sempre alinhará os itens de dentro do grid no eixo Y. O elemento que definirá o alinhamento central será sempre o maior elemento da linha.*/
+
+  /* O "justify-items" sempre alinhará os itens de dentro do grid no eixo X. */
+
+  /* O "place-items" é a junção do "align-items" com o "justify-items" em apenas uma propriedade. */
+
+  /* As propriedades "align-items", "justify-items" e "place-items" afetarão todos os itens dentro de um grid. */
+
+  align-items: center;
+
+  /* Essa propriedade permite que definamos as linhas do grid. Por padrão, todo
+  novo grid que é criado possui essa propriedade com o valor "auto". O valor
+  "auto" significa que a altura das linhas será dada de acordo com o conteúdo que
+  ela precisa comportar. */
+
+  grid-template-rows: auto auto;
+
+  /* Essa propriedade define como o Grid irá definir o tamanho das novas linhas que forem aparecendo no grid. Se colocarmos, por exemplo, um tamanho de 400px, todas as novas linhas terão 400px de tamanho. */
+
+  grid-auto-rows: auto;
+
+  /* O "repeat()" serve para caso tenhamos uma repetição de itens. No exemplo abaixo, estaremos repetindo quatro linhas de 200px cada uma. */
+
+  /* "grid-template-rows: repeat(4, 200px)" */
+}
+
+.preco {
+  /* Na propriedade "grid-row", podemos definir a linha em que um determinado elemento do grid será posicionado, assim, no exemplo abaixo, o elemento "preco" será posicionado na linha "3" do Grid. */
+
+  grid-row: 3;
+
+  /* A propriedade "grid-column" faz a mesma coisa que a propriedade "grid-row", definindo a coluna em que um determinado elemento deve ficar no grid. */
+
+  grid-row: 2;
+
+  /* A propriedade "grid-area" define o "grid-column" + "grid-row" em apenas uma propriedade. */
+
+  /* grid-area: 2 / 2; */
+}
