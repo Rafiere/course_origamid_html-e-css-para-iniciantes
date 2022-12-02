@@ -1,21 +1,24 @@
 # course_origamid_html-e-css-para-iniciantes
 
-Anotações:
+<h1>Anotações:</h1>
 
-Aulas com conteúdos importantes (Rever):
+<h2>Aulas com conteúdos importantes (Rever):</h2>
 
-211 - Box Model
-212 - Herança e Valores Padrões de Propriedades CSS.
-213 - Tipos de Displays no CSS.
-216 - Aula Sobre Imagens no CSS.
+<ul>
+    <li>211 - Box Model</li>
+    <li>212 - Herança e Valores Padrões de Propriedades CSS.</li>
+    <li>213 - Tipos de Displays no CSS.</li>
+    <li>216 - Aula Sobre Imagens no CSS.</li>
 
-301 - Aula Sobre Top, Right, Bottom e Left.
-302 - Aula Sobre Grid Columns
-303 - Aula Sobre Align e Justify-Content
-304 - Aula Sobre Grid Column
-305 - Aula Sobre Align e Justify Items.
-306 - Aula Sobre Grid Template Rows.
-307 - Aula Sobre Flexbox.
-308 - Aula Sobre Position.
+    <li>301 - Aula Sobre Top, Right, Bottom e Left.</li>
+    <li>302 - Aula Sobre Grid Columns</li>
+    <li>303 - Aula Sobre Align e Justify-Content</li>
+    <li>304 - Aula Sobre Grid Column</li>
+    <li>305 - Aula Sobre Align e Justify Items.</li>
+    <li>306 - Aula Sobre Grid Template Rows.</li>
+    <li>307 - Aula Sobre Flexbox.</li>
+    <li>308 - Aula Sobre Position.</li>
 
-501 - Aula Sobre Unidades.
+    <li>501 - Aula Sobre Unidades.</li>
+
+</ul>
