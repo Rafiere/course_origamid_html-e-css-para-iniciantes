@@ -1,0 +1,34 @@
+/* Com a propriedade "position", podemos influenciar no fluxo do elemento. Por padrão, os elementos são dispostos um abaixo do outro. Com o "position", podemos posicionar um elemento em qualquer lugar da página que desejarmos. */
+
+div {
+  border: 2px solid #ccc;
+  margin-top: 40px;
+  padding: 20px 20px 40px 20px;
+}
+
+span {
+  background: #e7e7e7;
+  border: 1px solid black;
+  padding: 10px;
+
+  /* O position "relative" está relativo em relação ao local que o elemento está, porém, ele continuará ocupando o espaço que ele estava ocupando anteriormente.*/
+
+  position: relative;
+
+  /* O position "absolute" tira o elemento do fluxo anterior e também faz com que ele não ocupe o espaço que ele ocupava anteriormente. */
+
+  /* Ele passará a ser absoluto em relação ao elemento em que ele se encontra apenas se o elemento-pai do elemento com "position: absolute" tenha o "position: relative". */
+}
+
+.fixo {
+  /* Ao definirmos o "position" como algo "não-static", podemos posicioná-lo através das propriedades "top", "right", "bottom" e "left". */
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+}
+
+/* Quando mudamos o "position" de um elemento através do CSS, ele altera o eixo de profundidade desse elemento, que é o "z-index". Se inserirmos um "z-index: -1", ele sempre estará por trás de todos os elementos do site. Quanto maior o "z-index", maior a prioridade dos elementos.
+
+A propriedade "z-index" só vai funcionar quando o "position" for alterado. */
