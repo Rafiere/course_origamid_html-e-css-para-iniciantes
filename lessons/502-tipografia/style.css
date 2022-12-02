@@ -1,0 +1,35 @@
+p {
+  font-size: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 900;
+
+  /* Normalmente, utilizamos o "font-style: italic" para tipografias serifadas, como no caso da Georgia, e "font-style: oblique" para tipografias sem serifa, como a Arial. */
+
+  font-style: normal;
+
+  /* Geralmente trabalhamos a altura da linha em relação ao valor da tipografia que temos. Se utilizarmos o "line-height: 1" e o valor do "font-size" for 16px, o "line-height" também será de 16px. */
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  text-transform: capitalize;
+
+  /* Essa propriedade serve para indentarmos a primeira linha. */
+
+  text-indent: 4rem;
+
+  /* Essa propriedade garante o alinhamento do texto. */
+
+  text-align: center;
+
+  /* Essa propriedade permite que insiramos sombra no texto. */
+
+  /* O primeiro valor é a posição da sombra no eixo X (ela andando para o lado), o segundo valor é a posição da sombra no eixo Y (ela andando para cima ou para baixo), o terceiro valor é o "blur", ou seja, o quanto que a sombra ficará espalhada. O quarto valor é a cor da sombra. */
+
+  text-shadow: 5px 5px 10px gray;
+
+  /* Esse valor permite a criação de um espaçamento para as letras. */
+
+  letter-spacing: 2px;
+}
