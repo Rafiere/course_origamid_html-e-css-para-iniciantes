@@ -1,0 +1,11 @@
+span {
+  /* We are using the "display: inline-block" for use the "padding", "margin" and others Box Model properties. */
+
+  display: inline-block;
+  background: #ddd;
+
+  padding: 30px;
+
+  border-top: 20px solid blue;
+  border-width: 4px 20px 20px 4px;
+}
