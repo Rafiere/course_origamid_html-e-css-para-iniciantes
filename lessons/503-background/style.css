@@ -1,0 +1,42 @@
+.bicicleta {
+  height: 600px;
+  background-color: lightblue;
+  background-image: url("./bicicleta.jpg");
+
+  /* Com essa propriedade, podemos definir se o background-image repetirá ou não. */
+
+  background-repeat: no-repeat;
+
+  /* Podemos definir qual será o tamanho da largura do background. */
+
+  /* O valor "background-size: cover" conterá a imagem. */
+  background-size: cover;
+
+  /* Se definirmos esse valor como "center", ao diminuirmos o tamanho do container da imagem, ele começará sempre cortando a imagem do centro. */
+  background-position: center;
+
+  display: flex;
+}
+
+h1 {
+  margin: auto;
+  background: white;
+  padding: 1rem 2rem;
+}
+
+.pattern {
+  height: 300px;
+  background-color: lightcoral;
+  background-image: url("./assets/pattern.svg");
+  background-repeat: repeat;
+}
+
+.linear {
+  height: 200px;
+  background-image: linear-gradient(45deg, lightblue 40%, lightcoral 80%);
+}
+
+.radial {
+  height: 200px;
+  background-image: linear-gradient(blue, red);
+}
