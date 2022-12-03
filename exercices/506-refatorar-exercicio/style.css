@@ -1,0 +1,232 @@
+body {
+  /* Se no computador da pessoa tiver o "Arial", o "Arial" será exibido, se não, o "Helvetica" será inserido, e, se não existir nenhuma das duas, uma tipografia genérica sans-serif será exibida. */
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  margin: 0px;
+
+  background: #f7f7f7;
+
+  display: grid;
+
+  /* O "gap" será aplicado entre os filhos de primeiro nível do "body", que está definido com o "display: grid". */
+
+  gap: 60px;
+
+  /* Estamos alinhando todos os elementos do Grid ao centro do componente "body". */
+
+  justify-items: center;
+
+  margin-top: 60px;
+}
+
+img {
+  /* Com essa propriedade, a imagem não vai crescer mais do que o tamanho da tela. */
+
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Estamos resetando os estilos padrões da lista. */
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+p,
+h1,
+h2,
+h3 {
+  /* Estamos resetando os estilos da margem. */
+
+  margin: 0px;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  gap: 60px;
+}
+
+.menu {
+  display: flex;
+
+  /* O "flex-wrap" permitirá que os botões quebrem e que o layout se torne responsivo. */
+
+  flex-wrap: wrap;
+
+  /* Sempre que os botões forem quebrados, eles serão alinhados ao centro. */
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.menu a {
+  display: inline-block;
+
+  background-color: #ffffff;
+
+  /* Sempre que tivermos um "padding" relacionado a uma tipografia específica, é recomendado que ele esteja em "rem". */
+
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  color: #000000;
+
+  text-transform: uppercase;
+
+  /* Essa propriedade está sendo utilizada para resolver o problema de os elementos ficarem saltando ao adicionarmos o ".menu a:hover", aumentando a borda quando passarmos o mouse por cima, assim, colocamos uma borda da mesma cor do background, para que, ao passarmos o mouse por cima, apenas a cor da borda seja alterada. */
+
+  /* Ao invés de utilizar o "#ffffff", que seria a cor do background, poderíamos utilizar a cor "transparent". */
+
+  border: 2px solid #ffffff;
+}
+
+.menu a:hover {
+  /* Ao adicionarmos uma borda no "hover", esse elemento ficará "saltando", pois, ao adicionarmos uma borda em qualquer elemento, por padrão, o tamanho desse elemento aumenta, assim, ele vai aumentar o elemento, o pai dele, e, consequentemente, vai empurrar todo o conteúdo dele para baixo. */
+
+  /* Para resolver o problema do "hover" estar criando uma borda e empurrando os elementos para baixo, no ".menu a", criamos um "border: 2px solid #ffffff", ou seja, uma borda com o mesmo tamanho, mas da cor do background, assim, o elemento não vai saltar quando passarmos o mouse por cima dele. */
+
+  border: 2px solid #e21;
+}
+
+.conteudo {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  /* Estamos definindo um limite para o conteúdo. Quando ele alcançar 1000px, o conteúdo parará de crescer e ele será alinhado ao centro, por causa que, no "body", definimos o "justify-items: center" */
+
+  max-width: 1000px;
+}
+
+.introducao {
+  background: #fff;
+  padding: 40px;
+  text-align: right;
+
+  display: grid;
+
+  position: relative;
+
+  align-content: center;
+  gap: 20px;
+  justify-items: end;
+}
+
+.introducao h1 {
+  font-size: 2rem;
+}
+
+.introducao::before {
+  /* Se um pseudo elemento não possuir um conteúdo, ele não existirá. */
+
+  /* Abaixo, estamos criando um pseudo elemento para gerarmos um detalhe no site. */
+
+  content: "";
+
+  width: 60px;
+  height: 4px;
+  background: #e21;
+  position: absolute;
+
+  top: 30px;
+  right: -30px;
+}
+
+/* .detalhe {
+  
+  width: 60px;
+  height: 4px;
+  background: #e21; */
+
+/* Por padrão, o "display" do "span" é "inline", então não conseguimos definir as propriedades do Box Model para ele. Se alterarmos para "inline-block", conseguimos definir essas propriedades. */
+
+/* No exemplo abaixo, como definimos o elemento-pai como "display: grid", esse elemento não precisará mais ter o "display: inline-block", pois ele se tornou um elemento de grid e passou a poder receber valores de "width" e "height". */
+
+/* display: inline-block; */
+
+/* position: absolute;
+
+  top: 30px;
+  right: -30px;
+} */
+
+.botao {
+  background: #e21;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+
+  text-transform: uppercase;
+}
+
+.botao:hover {
+  background: #900;
+}
+
+.subtitulo {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+
+  text-align: right;
+  padding: 40px;
+
+  /* Estamos alinhando o próprio item ao centro. */
+  align-self: center;
+
+  background-image: url("./assets/onda.svg");
+}
+
+.vantagens {
+  background: #fff;
+  padding: 40px;
+}
+
+.vantagens-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  /* O primeiro valor sempre terá a distância entre as linhas, enquanto que o segundo valor sempre terá a distância entre as colunas. */
+
+  gap: 10px 20px;
+
+  padding: 20px;
+}
+
+/* Apenas os elementos "pares" da lista terão a cor de fundo " */
+
+.vantagens-item:nth-child(odd) {
+  background: #f7f7f7;
+}
+
+.vantagens-item:hover {
+  border-left: 4px solid #e21;
+}
+
+.vantagens-item p {
+  grid-column: 2;
+}
+
+.rodape {
+  background: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+
+  /* Ao inserirmos a propriedade "box-sizing: border-box", estamos dizendo que esse elemento não somará o "padding" e nem o "border", respeitando apenas o tamanho do "width". */
+
+  box-sizing: border-box;
+}
