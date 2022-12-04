@@ -1,0 +1,10 @@
+/* Utilizar o "@import" não é a forma mais otimizada de utilizarmos vários arquivos CSS ao mesmo tempo, existem outras formas de fazermos isso. */
+
+/* Nesse exemplo, o arquivo "style.css" será carregado primeiro, e, após isso, o CSS começará a importar o conteúdo do arquivo que está sendo importado através do "@import". */
+
+@import "./global.css";
+@import "./header.css";
+@import "./introducao.css";
+@import "./experiencia.css";
+@import "./formacao.css";
+@import "./footer.css";

@@ -1,0 +1,71 @@
+.header {
+  display: flex;
+
+  /* Com o "space-between", um elemento do display ficará de um lado, enquanto que o outro elemento do display ficará no outro lado. */
+  justify-content: space-between;
+
+  /* Estamos alinhando os itens ao centro. */
+  align-items: center;
+
+  /* Se queremos uma margem interna, é recomendado utilizarmos o "padding", pois, caso queiramos pintar o background, no futuro, a cor pegará o elemento inteiro, e não apenas um quadrado, sem pintar as margens, como aconteceria se utilizássemos o "padding". */
+
+  padding: 40px 20px;
+
+  /* Esse header terá um tamanho máximo, para que, se a janela do site for muito expandido, ele não fique muito espaçado. */
+
+  /* Se vamos querer um site alinhado, também queremos um site em que o conteúdo crescerá do mesmo tamanho, por isso, utilizaremos essa mesma medida de "max-width" para o site inteiro. */
+
+  max-width: 1200px;
+
+  /* Quando o elemento parar de crescer, por causa do "max-width", queremos alinhar esse elemento. Para alinharmos um elemento que possui um "max-width" definido, quando ele chegar em seu tamanho máximo, temos que utilizar o "margin-left: auto" e o "margin-right: auto". */
+}
+
+.header-menu {
+  display: flex;
+
+  /* Se diminuirmos os elementos do menu de uma forma que ele não tenha espaço para comportar o elemento, o "wrap" fará com que esses elementos quebrem para a próxima linha. */
+
+  flex-wrap: wrap;
+  gap: 10px;
+
+  /* Queremos que, quando o layout quebre e os elementos vão para a linha debaixo, ou seja, que tenha espaço sobrando, que os botões fiquem justificados ao centro. */
+
+  justify-content: center;
+}
+
+.header-menu a {
+  /* Para obtermos o valor em "rem", devemos acessar o Figma e verificarmos o tamanho da fonte que o designer utilizou, que, nesse caso, é o "18px", após isso, temos que ver o tamanho da fonte global que será utilizada no site, que, por padrão, é o "16px", assim, basta realizarmos a conta "18/16", o resultado será o valor em "rem" que deverá ser utilizado. */
+
+  font-size: 1.125rem;
+
+  line-height: 1.3;
+
+  /* Sempre é recomendado colocarmos "paddings" em áreas de link, pois se clicarmos apenas no link, o espaço é muito pequeno e isso poderá prejudicar a UX do site, pois o usuário poderá ter dificuldades para clicar no link. */
+
+  padding: 10px 20px;
+
+  text-decoration: none;
+
+  color: #141414;
+
+  /* Estamos definindo como "display: block" para que os valores do padding sejam inseridos corretamente, pois, por padrão, o elemento "a" possui o display "inline". */
+
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column;
+
+    /* O "gap" aumentará a distância entre os itens. */
+
+    gap: 40px;
+
+    padding: 20px;
+  }
+
+  .header a {
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+}

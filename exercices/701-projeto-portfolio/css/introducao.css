@@ -1,0 +1,96 @@
+.introducao {
+  /* Não queremos que o elemento expanda mais do que 1200px, assim como fizemos com os elementos anteriores. */
+
+  max-width: 1200px;
+
+  padding: 40px 20px;
+
+  /* Essa "margin" serve para deixarmos o elemento alinhado quando temos um "max-width". */
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+
+  /* Estamos alinhando o conteúdo ao centro, ou seja, se tiver espaço disponível no eixo Y do conteúdo, o conteúdo será alinhado ao centro nesse eixo. */
+
+  align-items: center;
+}
+
+.introducao h1 {
+  font-size: 4.5rem;
+
+  /* O "line-height" vai multiplicar o valor do "font-size", assim, se o "font-size" for de 4.5rem, teremos "4.5 * 16", que resultará em "72px", multiplicado por "1.125", resultando em 81px, dessa forma, nesse caso, o "line-height" será de 81px. */
+
+  line-height: 1.125;
+
+  margin-bottom: 30px;
+
+  /* Estamos definindo esse "position" como "relative" para que o pseudo elemento "h1::before" possa usar o "position: absolute" e ter o posicionamento relacionado ao elemento-pai, que é o ".introducao h1", ao invés de ser posicionado através da página inteira. */
+
+  position: relative;
+}
+
+.introducao h1::before {
+  /* Todo pseudo elemento deve possuir um "content" para que o pseudo elemento seja exibido. */
+
+  content: "";
+
+  display: block;
+
+  width: 130px;
+  height: 100px;
+
+  background: url("../assets/detalhe.svg") no-repeat center;
+
+  position: absolute;
+  top: -15px;
+  left: -40px;
+
+  /* Estamos jogando esse elemento para trás do título. */
+
+  z-index: -1;
+}
+
+.introducao p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+/* Sempre colocamos o "media-query" no ponto de quebra da página, para garantir a responsividade. */
+
+@media (max-width: 1000px) {
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .introducao h1 {
+    font-size: 2rem;
+  }
+
+  .introducao h1::before {
+    width: 30px;
+    height: 10px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .introducao {
+    grid-template-columns: 1fr;
+  }
+
+  .introducao img {
+    /* Quando a tela do celular é muito pequena, estamos retirando a imagem. */
+
+    display: none;
+  }
+}

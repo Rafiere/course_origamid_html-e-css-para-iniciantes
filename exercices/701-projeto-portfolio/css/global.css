@@ -1,0 +1,63 @@
+/* Esse CSS possuirá toda a estilização global da página. */
+
+/* Algumas definições globais de estilos, bem como alguns resets de CSS serão inseridos aqui. */
+
+body {
+  /* Quase todos os elementos da aplicação herdarão as propriedades que estão sendo declaradas no "body", exceto os elementos que já possuírem propriedades declaradas por padrão, como o elemento "<a>", por exemplo. */
+
+  margin: 0px;
+  font-family: "Fira Sans", Arial, sans-serif;
+  color: #141414;
+}
+
+/* Estamos resetando os estilos dos títulos, dos parágrafos e das listas. */
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  /* Quando adicionarmos uma imagem, ela não crescerá infinitamente, pois já estamos utilizando a propriedade "max-width: 100%", assim, ela crescerá apenas o tamanho de seu container. */
+
+  max-width: 100%;
+
+  /* O "height" vai ser definido automaticamente pelo tamanho da largura, assim, a imagem nunca ficará esmagada. */
+
+  height: auto;
+  display: block;
+}
+
+/* A classe "subtitulo" será definida globalmente pois o estilo dessa classe pode ser encontrado em duas partes diferentes do site, dessa forma, para evitarmos inserir o mesmo código CSS duas vezes, estamos passando o estilo dessa classe para o global. */
+
+.subtitulo {
+  font-size: 8rem;
+  word-break: break-all;
+  line-height: 1;
+  text-transform: uppercase;
+
+  /* Quando o container estiver bem espaçado, a palavra será quebrada nos quatro primeiros caracteres, ou quase 4 caracteres. */
+
+  max-width: 4ch;
+}
+
+@media (max-width: 800px) {
+  .subtitulo {
+    font-size: 3rem;
+    text-transform: capitalize;
+
+    /* Nesse tamanho de tela, não queremos que as letras quebrem a cada "4ch", como definido no ".subtitulo", dessa forma, estamos retornando o "max-width" para o tamanho normal, que é o "initial". */
+
+    /* O "!important" fará com que essa propriedade CSS entre na frente de qualquer outra propriedade, e que ela não seja sobrescrita, a menos que exista uma propriedade CSS com uma especificidade ainda maior do que essa. */
+
+    max-width: initial !important;
+  }
+}

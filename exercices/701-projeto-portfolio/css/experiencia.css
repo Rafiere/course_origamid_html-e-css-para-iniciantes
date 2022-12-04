@@ -1,0 +1,138 @@
+.experiencia {
+  /* Esse tamanho é o máximo que esse conteúdo vai crescer. Ele serve para alinharmos o site. */
+  max-width: 1200px;
+
+  padding: 40px 20px;
+
+  /* Quando temos um "max-width", ao inserirmos um "margin: 0 auto", estamos centralizando esse elemento na tela. */
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 2fr;
+
+  gap: 100px;
+}
+
+.experiencia .subtitulo {
+  color: #e0e0e0;
+}
+
+.experiencia-texto {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  margin-bottom: 60px;
+
+  /* Sempre que aumentarmos a janela, o texto ficará sempre no tamanho máximo de 40ch, que significam "40 espaços do caractere 0". Um caractere grande, como o "M", pode ocupar mais de um "ch". */
+
+  max-width: 40ch;
+
+  color: #525252;
+}
+
+.experiencia-texto strong {
+  color: #141414;
+}
+
+.empresa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  background: #f5f5f5;
+  margin-bottom: 20px;
+  border-radius: 4px;
+
+  /* Estamos definindo como "relative" para que o "empresa-ano" possa ser posicionado em relação ao container ".empresa", ao invés de ser posicionado em relação a página inteira. */
+
+  position: relative;
+}
+
+.empresa::before {
+  /* Um pseudo elemento sem um "content" não será exibido na tela. */
+
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#b6f829, #67dd0a);
+
+  /* Ao definirmos como "position: absolute", estamos tirando esse elemento do fluxo do layout, ou seja, ele não ocupará mais uma coluna do grid. */
+  position: absolute;
+
+  top: 20px;
+  left: -4px;
+
+  /* Estamos criando um espaçamento de 10px entre as linhas do grid e um espaçamento de 20px entre as colunas do grid. */
+
+  gap: 10px 20px;
+}
+
+.empresa-ano {
+  position: absolute;
+  top: 22px;
+  left: -100px;
+  color: #525252;
+  font-size: 0.875rem;
+
+  /* Estamos criando um tamanho grande para que possamos alinhar esse ano à direita. */
+  width: 80px;
+  text-align: right;
+}
+
+.empresa-titulo {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.empresa-texto {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #525252;
+}
+
+.empresa-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  align-content: start;
+}
+
+.empresa habilidades li {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+@media (max-width: 800px) {
+  .experiencia {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .experiencia .subtitulo {
+    color: #141414;
+  }
+
+  .experiencia-texto {
+    font-size: 1.5rem;
+  }
+
+  .empresa-ano {
+    position: initial;
+
+    /* Estamos jogando esse elemento HTML no final do container em que ele está inserido, porém, essa mudança é feita apenas através do CSS, o HTML da página não é alterado. */
+
+    order: 1;
+    width: initial;
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .empresa {
+    grid-template-columns: 1fr;
+  }
+}
