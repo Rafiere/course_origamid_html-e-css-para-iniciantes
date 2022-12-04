@@ -1,0 +1,59 @@
+/* A "@media" gerará um bloco de código que só será ativado caso a condição entre parênteses seja verdadeira, por exemplo, se inserirmos um "@media(max-width: 500px)", o código que está dentro desse bloco só será ativado se o tamanho da tela do usuário for menor que 500px */
+
+img {
+  /* Estamos tornando a imagem responsiva. */
+
+  max-width: 100%;
+  display: block;
+}
+
+div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+h1 {
+  /* Estamos definindo que o "h1" deve pegar da primeira coluna do grid até o final. */
+  grid-column: 1 / -1;
+}
+
+/* Quando a tela tiver no máximo 600px, ou seja, um tamanho abaixo de 600px, o bloco de código abaixo será ativado. */
+
+/* É recomendado que a parte responsiva do site sempre esteja na parte inferior do CSS. */
+@media (max-width: 600px) {
+  div {
+    /* Estamos definindo que, quando a tela tiver menos que 600px, o Grid passará a ter apenas uma coluna. */
+
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    background: lightpink;
+  }
+}
+
+/* Quando a tela tiver mais que 1000px, o bloco de código abaixo será aplicado. */
+@media (min-width: 1000px) {
+  /* Como estamos utilizando as medidas em "rem", quando o tamanho da tela for maior que 1000px, o tamanho da fonte do site será aumentada. */
+
+  html {
+    font-size: 150%;
+  }
+}
+
+/* Podemos utilizar operadores lógicos no media-query. Nesse exemplo, o código abaixo será aplicado apenas quando o tamanho mínimo da tela for de 700px e o tamanho máximo for de 900px, ou seja, o tamanho da tela estiver entre os dois tamanhos especificados nos dois "@media". */
+@media (min-width: 700px) AND (max-width: 900px) {
+  html {
+    font-size: 200%;
+    background: lightblue;
+  }
+}
+
+/* Esse CSS será ativado apenas na tela, ou seja, se tentarmos, por exemplo, imprimir essa tela, esse efeito não será aplicado. Para isso ocorrer, ao imprimirmos, temos que deixar selecionada a opção "Gráficos de Segundo Plano". */
+@media screen {
+}
+
+/* Esse código CSS apenas será aplicado ao imprimirmos a página. */
+@media print {
+}
