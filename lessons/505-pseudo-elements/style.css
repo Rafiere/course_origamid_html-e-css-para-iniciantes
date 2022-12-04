@@ -1,0 +1,55 @@
+h1 {
+  position: relative;
+}
+
+/* Os pseudoelements "::before" e "::after" criam elementos HTML com base no seletor. */
+
+h1::before {
+  /* Esse atributo terá o conteúdo do elemento. */
+
+  content: "";
+
+  display: inline-block;
+  width: 60px;
+  height: 4px;
+  background: #caf;
+  margin-right: 10px;
+  position: absolute;
+  top: 20px;
+  z-index: -1;
+}
+
+/* Esse elemento será criado após o elemento "h1". */
+h1::after {
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 1.5rem;
+  align-items: center;
+}
+
+li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 4px;
+  border: 2px solid #caf;
+  bargin-right: 10px;
+  background: linear-gradient(#caf, #fff);
+}
+
+/* Esse pseudoseletor seleciona a primeira linha do conteúdo. */
+
+p::first-line {
+  font-weight: bold;
+}
+
+/* Esse pseudoseletor seleciona a primeira letra do conteúdo. */
+
+p::first-letter {
+  font-size: 2rem;
+}
